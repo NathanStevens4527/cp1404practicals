@@ -17,7 +17,7 @@ def main():
             stars = generate_stars(score)
             print(stars)
         choice = input(">>")
-    print("Good bye")
+    print("Goodbye")
 
 
 def get_valid_score():
