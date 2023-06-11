@@ -14,8 +14,8 @@ def main():
             score_status = determine_score_status(score)
             print(f"That score is {score_status}")
         elif choice == "S":
-            generate_stars(score)
-            print(s)
+            stars = generate_stars(score)
+            print(stars)
         choice = input(">>")
     print("Good bye")
 
