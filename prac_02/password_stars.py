@@ -21,3 +21,5 @@ def get_password(minimum_password_length):
         print("Please enter a longer password")
         password = input("Enter Password >>")
     return password
+
+main()
