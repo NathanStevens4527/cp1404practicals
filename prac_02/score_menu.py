@@ -1,5 +1,8 @@
 """
-
+Program for getting score with menu loop
+error checks for valid score between 1-100 inclusive
+returns score status
+prints stars based of score
 """
 MENU = "(G)et a score between 1-100\n(P)rint result\n(S)how stars\n(Q)uit"
 
