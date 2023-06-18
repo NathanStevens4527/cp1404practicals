@@ -2,8 +2,12 @@
 CP1404/CP5632 - Practical
 Answer the following questions:
 1. When will a ValueError occur?
+A ValueError will occur if anything other than an integer is entered.
 2. When will a ZeroDivisionError occur?
+A ZeroDivisionError will occur if 0 is entered for either the numerator or denominator.
 3. Could you change the code to avoid the possibility of a ZeroDivisionError?
+An error checking while loop could be implemented to keep asking for an integer
+ until the user enters a non zero integer
 """
 
 try:
