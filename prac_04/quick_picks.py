@@ -19,8 +19,9 @@ for i in range(0, number_of_lines):
         while quick_pick in line:
             quick_pick = 0
             quick_pick = random.randint(MINIMUM_NUMBER, MAXIMUM_NUMBER)
-        line.append(quick_pick)
+        line.append(f"{quick_pick:>2}")
         number_of_picks += 1
     quick_picks.append(line)
-    print(quick_picks)
 
+for line in quick_picks:
+    print(" ".join(line))
