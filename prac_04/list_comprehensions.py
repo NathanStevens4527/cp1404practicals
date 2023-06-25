@@ -39,7 +39,7 @@ almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
 numbers = []
 for almost_number in almost_numbers:
      number = int(almost_number)
-     numbers += number
+     numbers.append(number)
 print(numbers)
 
 # TODO: list comprehension to create a list of only the numbers that are
