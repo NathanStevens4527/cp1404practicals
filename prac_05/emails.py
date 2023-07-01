@@ -12,7 +12,8 @@ def main():
         name = get_name(email)
         emails_to_names[email] = name
         email = input("Email: ")
-    print(emails_to_names)
+    for email, name in emails_to_names.items():
+        print(f"{name}, ({email})")
 
 
 def get_name(email):
