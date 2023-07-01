@@ -6,13 +6,13 @@ the emails and names will be stored in a dictionary.
 
 
 def main():
-    emails_to_names = {}
+    email_to_name = {}
     email = input("Email: ")
     while email != "":
         name = get_name(email)
-        emails_to_names[email] = name
+        email_to_name[email] = name
         email = input("Email: ")
-    for email, name in emails_to_names.items():
+    for email, name in email_to_name.items():
         print(f"{name}, ({email})")
 
 
