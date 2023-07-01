@@ -20,7 +20,7 @@ def get_name(email):
     name = email.split("@")
     name = " ".join(name[0].title().split("."))
     confirm_name = input(f"Is your name {name}? (Y/n)")
-    if confirm_name != "Y":
+    if confirm_name != "Y" and confirm_name != "":
         name = input("Name: ")
     return name
 
