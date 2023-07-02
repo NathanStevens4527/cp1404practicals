@@ -12,6 +12,8 @@ def main():
     champion_to_win = {}
     countries = {}
     data = get_data(FILENAME)
+    champion_to_win, countries = process_data(data)
+    print(countries, champion_to_win)
     print("DONE")
 
 
@@ -24,5 +26,20 @@ def get_data(file):
             data.append(line)
         return data
 
+
+def process_data(data):
+    champion_to_win = {}
+    countries = []
+    for line in data:
+        champion = line[CHAMPION_INDEX]
+        if champion not in champion_to_win:
+            champion_to_win[champion] = 1
+        else:
+            champion_to_win[champion] += 1
+        country = line[COUNTRY_INDEX]
+        if country not in countries:
+            countries.append(country)
+        countries.sort()
+    return champion_to_win, countries
 
 main()
