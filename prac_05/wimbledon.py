@@ -9,12 +9,9 @@ CHAMPION_INDEX = 2
 
 
 def main():
-    champion_to_win = {}
-    countries = {}
     data = get_data(FILENAME)
     champion_to_win, countries = process_data(data)
-    print(countries, champion_to_win)
-    print("DONE")
+    print_data(champion_to_win, countries)
 
 
 def get_data(file):
@@ -41,5 +38,15 @@ def process_data(data):
             countries.append(country)
         countries.sort()
     return champion_to_win, countries
+
+
+def print_data(champion_to_win, countries):
+    number_of_countries = len(countries)
+    print("Wimbledon Champions:")
+    for champion in champion_to_win:
+        print(f"{champion} {champion_to_win[champion]}")
+    print(f"\nThese {number_of_countries} countries have won Wimbledon:")
+    print(", ".join(countries))
+
 
 main()
