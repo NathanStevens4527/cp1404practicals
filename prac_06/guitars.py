@@ -29,6 +29,10 @@ def main():
         guitars.append(new_guitar)
         print(f"{new_guitar} added.")
         name = input("Name: ")
+    print_guitars(guitars)
+
+
+def print_guitars(guitars):
     guitars.sort(key=attrgetter("year"))
     longest_guitar = 0
     for guitar in guitars:
@@ -39,7 +43,8 @@ def main():
     for guitar in guitars:
         number += 1
         vintage_string = "(vintage)" if guitar.is_vintage(guitar.get_age()) else ""
-        print(f"Guitar {number}: {guitar.name:>{longest_guitar}} ({guitar.year}), worth ${guitar.cost:10,.2f} {vintage_string}")
+        print(
+            f"Guitar {number}: {guitar.name:>{longest_guitar}} ({guitar.year}), worth ${guitar.cost:10,.2f} {vintage_string}")
 
 
 main()
