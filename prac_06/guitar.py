@@ -5,4 +5,19 @@ Estimated completion time 50 minutes
 class Guitar:
     """Represents a guitar object"""
 
-    def __init__(self, name, year, cost):
+    def __init__(self, name="", year=0, cost=0):
+        self.name = name
+        self.year = year
+        self.cost = cost
+
+    def __str__(self):
+        return f"{self.name}({self.year}) : ${self.cost}"
+
+    def get_age(self):
+        return 2022 - self.year
+
+    def is_vintage(self, get_age):
+        if get_age >= 50
+            return True
+        else:
+            return False
