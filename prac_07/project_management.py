@@ -18,7 +18,9 @@ COMPLETION_PERCENTAGE_INDEX = 4
 def main():
     projects = []
     projects = load_projects(projects, FILENAME)
-    print(projects)
+    print(projects[3])
+
+    print(projects[4].is_completed(projects[4].completion_percentage))
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
@@ -39,7 +41,16 @@ def main():
             except FileNotFoundError:
                 print("Invalid filename")
         elif choice == "D":
-            print(projects)
+            projects.sort()
+            completed_projects = []
+            incomplete_projects = []
+            for project in projects:
+                if project.is_completed(project.completion_percentage):
+                    completed_projects.append(project)
+                else:
+                    incomplete_projects.append(project)
+            print(incomplete_projects)
+            print(completed_projects)
         elif choice == "F":
             pass
         elif choice == "A":
@@ -53,11 +64,11 @@ def main():
 
 
 def save_projects(projects, file):
-    out_file = open(file, "r")
+    out_file = open(file, "w")
     initial_line = "Name	Start Date	Priority	Cost Estimate	Completion Percentage"
     print(initial_line, file=out_file)
     for project in projects:
-        line = "\t".join(project)
+        line = f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost_estimate}\t{project.completion_percentage}"
         print(line, file=out_file)
     out_file.close
 
@@ -66,9 +77,8 @@ def load_projects(projects, file):
     in_file = open(file, "r")
     in_file.readline()
     for line in in_file:
-        line = line.split("\t")
-        project = Project(line[NAME_INDEX], line[START_DATE_INDEX], line[PRIORITY_INDEX],
-                          line[COST_ESTIMATE_INDEX], line[COMPLETION_PERCENTAGE_INDEX])
+        line = line.strip().split("\t")
+        project = Project(line[NAME_INDEX], line[START_DATE_INDEX], line[PRIORITY_INDEX], line[COST_ESTIMATE_INDEX], line[COMPLETION_PERCENTAGE_INDEX])
         projects.append(project)
     in_file.close()
     return projects

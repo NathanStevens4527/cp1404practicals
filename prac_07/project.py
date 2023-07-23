@@ -15,4 +15,15 @@ class Project:
         self.completion_percentage = completion_percentage
 
     def __repr__(self):
-        return f"{self.name},{self.start_date},{self.priority},{self.cost_estimate},{self.completion_percentage}"
+        """generates string for project"""
+        return f"{self.name}, Started on {self.start_date},priority = {self.priority}, Estimated cost : {self.cost_estimate}, {self.completion_percentage}% completed"
+
+    def is_completed(self, completion_percentage):
+        """returns boolean for if project is completed"""
+        if self.completion_percentage == 100:
+            return True
+        else:
+            return False
+
+    def __lt__(self, other):
+        return self.priority < other.priority
