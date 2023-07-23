@@ -5,3 +5,9 @@ Practical work for IT@JCU CP1404 for Nathan Stevens
 - Eliminate redundancy, Dont repeat yourself(DRY)
 - Follow good naming conventions
 - single responsibility principle (SRP) when writing functions
+
+# Important links
+## Programming Patterns
+- https://github.com/CP1404/Starter/wiki/Programming-Patterns
+## Practicals Instructions
+- https://github.com/CP1404/Practicals/tree/master
