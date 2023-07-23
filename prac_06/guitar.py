@@ -12,7 +12,7 @@ class Guitar:
         self.year = year
         self.cost = cost
 
-    def __str__(self):
+    def __repr__(self):
         """Generates string for guitar object"""
         return f"{self.name}({self.year}) : ${self.cost}"
 
@@ -26,3 +26,7 @@ class Guitar:
             return True
         else:
             return False
+
+    def __lt__(self, other):
+        """Sorts guitar objects by year"""
+        return self.year < other.year
