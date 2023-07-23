@@ -1,3 +1,8 @@
+"""
+program for loading and managing projects
+unfortunately this program is incomplete
+"""
+
 from prac_07.project import Project
 
 MENU = "(L) load projects\n" \
