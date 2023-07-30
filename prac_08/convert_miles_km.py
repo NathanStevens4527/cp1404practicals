@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
 
+MILES_TO_KM = 1.609
 
 class ConvertMilesToKilometersApp(App):
     """ SquareNumberApp is a Kivy App for squaring a number """
@@ -15,9 +16,16 @@ class ConvertMilesToKilometersApp(App):
 
     def handle_convert_to_kilometers(self, miles):
         try:
-            kilometers = float(miles) * 1.609
+            kilometers = float(miles) * MILES_TO_KM
             self.root.ids.output_result.text = str(kilometers)
-        except TypeError:
+        except ValueError:
+            self.root.ids.input_mile.text = '0'
+
+    def handle_increment(self, miles, increment):
+        try:
+            miles = float(miles) + float(increment)
+            self.root.ids.input_mile.text = str(miles)
+        except ValueError:
             self.root.ids.input_mile.text = '0'
 
 
