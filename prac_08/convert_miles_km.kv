@@ -7,6 +7,7 @@ BoxLayout:
             id: input_mile
             font_size: 20
             multiline: False
+            on_text: app.handle_convert_to_kilometers(input_mile.text)
         BoxLayout:
             size_hint_x: 0.20
             orientation: 'vertical'
@@ -18,9 +19,9 @@ BoxLayout:
                 on_press: app.handle_increment(input_mile.text, -1)
     BoxLayout:
         orientation: 'vertical'
-        Button:
-            text: 'Convert miles to km'
-            on_press: app.handle_convert_to_kilometers(input_mile.text)
+#        Button:
+#            text: 'Convert miles to km'
+#            on_press: app.handle_convert_to_kilometers(input_mile.text)
         Label:
             id: output_result
             text: ''
