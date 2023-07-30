@@ -1,0 +1,28 @@
+BoxLayout:
+    orientation: 'vertical'
+    size_hint_y: -0.6
+#    orientation: 'horizontal'
+    Button:
+        text: 'one'
+    Button:
+        text: 'two'
+    Button:
+        text: 'three'
+        on_press: app.handle_greet(self)
+    Label:
+        text: 'Enter your name'
+        color: (1, 1, 0, 1)
+    BoxLayout:
+#    orientation: 'vertical'
+        orientation: 'horizontal'
+#        size_hint_y: 0.4
+        Button:
+            text: 'one1'
+        Button:
+            text: 'two2'
+        Button:
+            text: 'three3'
+            on_press: app.handle_greet(self)
+        Label:
+            text: 'Enter your name'
+            color: (1, 1, 0, 1)
