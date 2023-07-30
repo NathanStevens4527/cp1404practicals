@@ -12,11 +12,15 @@ BoxLayout:
             orientation: 'vertical'
             Button:
                 text: 'Up'
+                on_press: app.handle_increment(input_mile.text, 1)
             Button:
                 text: 'Down'
+                on_press: app.handle_increment(input_mile.text, -1)
     BoxLayout:
         orientation: 'vertical'
         Button:
             text: 'Convert miles to km'
+            on_press: app.handle_convert_to_kilometers(input_mile.text)
         Label:
-            text: 'result'
+            id: output_result
+            text: ''
