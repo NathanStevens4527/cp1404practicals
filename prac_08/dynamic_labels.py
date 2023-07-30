@@ -1,3 +1,6 @@
+"""
+program for generating labels from a list
+"""
 
 from kivy.app import App
 from kivy.lang import Builder
