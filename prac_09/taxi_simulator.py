@@ -30,6 +30,8 @@ def main():
         print(f"Bill to date: ${bill}")
         print(MENU)
         choice = input(">>> ").upper()
+    print("taxis are now")
+    print_taxis(taxis)
 
 
 def drive_taxi(bill, current_taxi):
