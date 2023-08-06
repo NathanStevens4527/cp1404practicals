@@ -1,4 +1,6 @@
-"""   """
+"""
+class for band objects
+"""
 from prac_09.musician import Musician
 
 

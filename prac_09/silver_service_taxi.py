@@ -5,7 +5,7 @@ class for silver service taxi
 from prac_09.taxi import Taxi
 
 class SilverServiceTaxi(Taxi):
-    """   """
+    """Class for Silver Service Taxis, inheriting from Taxi"""
     flagfall = 4.50
 
     def __init__(self, name, fuel, fanciness):
